@@ -1,0 +1,86 @@
+header{
+    max-width: 80rem;
+    width: 100%;
+    padding: 1.25rem 2rem;
+    margin: 0 auto;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar{
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar > a{
+    color: black;
+    padding-bottom: 0.2rem;
+    border-bottom: 2px solid transparent;
+    
+    transition: border-color ease 0.2s;
+
+    &:hover{
+        border-color: black;
+    }
+}
+
+#cartIcon{
+    background-color: transparent;
+    border: none;
+    margin-right: 1rem;
+    cursor: pointer;
+
+    &:hover{
+        animation: balancadinha 1s ease-in-out;
+    }
+}
+
+@keyframes balancadinha {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-20deg);
+    }
+    50% {
+        transform: rotate(20deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+
+}
+
+#userIcon{
+    background-color: transparent;
+    border: none;
+    margin-right: 1rem;
+    cursor: pointer;
+
+    &:hover{
+        animation: crescidinha 1s ease-in-out;
+    }
+}
+
+@keyframes crescidinha {
+    0% {
+        transform: scale(1.1);
+    }
+    25% {
+        transform: scale(1.15);
+    }
+    50% {
+        transform: scale(1.19);
+    }
+    75% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
