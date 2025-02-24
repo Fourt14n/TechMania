@@ -52,3 +52,29 @@
 .hero img{
     width: 100%;
 }
+.benefits{
+    margin:  0 auto;
+    max-width: 80rem;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.benefitsCard{
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+}
+
+.benefitsCard span{
+    background-color: var(--color-primary);
+    padding: 10px;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.benefitsCard div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
