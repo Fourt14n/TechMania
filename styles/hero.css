@@ -1,7 +1,5 @@
 .heroContainer{
-    max-width: 80rem;
     width: 100%;
-    margin: 0 auto;
     padding: 2.5rem 2rem;
 
     display: flex;
@@ -53,9 +51,6 @@
     width: 100%;
 }
 .benefits{
-    margin:  0 auto;
-    max-width: 80rem;
-
     display: flex;
     justify-content: space-between;
 }
