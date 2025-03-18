@@ -74,7 +74,7 @@ function carregarProdutos(){
                             <span>R$ ${produto.price}</span>
                         </div>
 
-                        <button>
+                        <button onclick="addToCart(${produto.id})">
                             <img src="assets/icons/cart.svg" alt="">
                         </button>
                     </div>
@@ -85,4 +85,39 @@ function carregarProdutos(){
     })
 }
 
-carregarProdutos();
+function addToCart(produtoId){
+    // Busca o produto na lista de produtos
+    const produto = produtos.find(p => p.id == produtoId);
+
+
+    if(produto){
+        // Pega o carrinho no sessionStorage
+        const carrinho = JSON.parse(sessionStorage.getItem("carrinho")) || [];
+
+        // Adiiona o produto no carrinho
+        carrinho.push(produto);
+
+        // Adciona o carrinho modificado no sessionStorage
+        sessionStorage.setItem("carrinho", JSON.stringify(carrinho));
+
+        
+        alert(`O produto ${produto.name} foi adicionando ao carrinho!`);
+    }
+    atualizarContadorProdutos();
+}
+
+function atualizarContadorProdutos(){
+    const carrinho =  JSON.parse(sessionStorage.getItem("carrinho")) || [];
+    const qtd = carrinho.length;
+
+    const contador = document.querySelector(".productCount");
+
+    contador.innerText = qtd;
+    contador.style.display = qtd > 0 ? "flex" : "none";
+
+}
+window.onload = () => {
+    carregarProdutos();
+    atualizarContadorProdutos();
+    
+}
